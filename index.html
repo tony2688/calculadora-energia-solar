@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Solar Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora Solar Inteligente</h1>
+        
+        <div class="control-section">
+            <div class="input-group">
+                <label for="metodocalculo">Método de cálculo</label>
+                <select id="metodocalculo" class="input-field" aria-label="Seleccionar método de cálculo">
+                    <option value="factura">Por factura eléctrica</option>
+                    <option value="electrodomesticos">Por electrodomésticos</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="ubicacion">Ubicación para HSP</label>
+                <select id="ubicacion" class="input-field" aria-label="Seleccionar ubicación">
+                    <option value="5.5">Noroeste (Jujuy, Salta, Tucumán)</option>
+                    <option value="5.0">Cuyo (Mendoza, San Juan)</option>
+                    <option value="4.5">Centro (Córdoba, Santa Fe)</option>
+                    <option value="4.0">Pampeana (Buenos Aires, La Pampa)</option>
+                    <option value="3.5">Patagonia (Chubut, Santa Cruz)</option>
+                    <option value="auto">Detectar automáticamente (usar mi ubicación)</option>
+                </select>
+                <div class="error-message" id="errorUbicacion"></div>
+            </div>
+
+            <div id="facturaSection" class="input-group">
+                <label for="consumoMensual">Consumo mensual (kWh)</label>
+                <input type="number" id="consumoMensual" class="input-field" placeholder="Ej: 450">
+                <div class="error-message" id="errorConsumo"></div>
+            </div>
+
+            <div id="electrodomesticosSection" class="hidden">
+                <div class="input-group">
+                    <label for="buscarElectro">Buscar electrodoméstico</label>
+                    <input type="text" id="buscarElectro" class="input-field" placeholder="Ej: Heladera" oninput="filtrarElectrodomesticos(this.value)">
+                </div>
+                <div id="listaElectro">
+                    <!-- Los electrodomésticos se cargarán dinámicamente aquí -->
+                </div>
+                <button type="button" onclick="agregarElectro()" class="add-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    </svg>
+                    Añadir dispositivo
+                </button>
+                <div class="error-message" id="errorElectro"></div>
+            </div>
+        </div>
+
+        <button class="primary-button" onclick="calcularSistema()">
+            Calcular sistema solar
+        </button>
+
+        <div id="resultados" class="results-panel">
+            <h2 class="results-title">Recomendación de sistema</h2>
+            <div class="result-item">
+                <span>Paneles solares:</span>
+                <span class="result-value" id="panelesResultado">-</span>
+            </div>
+            <div class="result-item">
+                <span>Capacidad de baterías:</span>
+                <span class="result-value" id="bateriasResultado">-</span>
+            </div>
+            <div class="result-item">
+                <span>Inversor recomendado:</span>
+                <span class="result-value" id="inversorResultado">-</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

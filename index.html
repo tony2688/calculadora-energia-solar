@@ -1,83 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Solar Profesional</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Solar Profesional</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Calculadora Solar Inteligente</h1>
-        
-        <div class="control-section">
-            <div class="input-group">
-                <label for="metodocalculo">Método de cálculo</label>
-                <select id="metodocalculo" class="input-field" aria-label="Seleccionar método de cálculo">
-                    <option value="factura">Por factura eléctrica</option>
-                    <option value="electrodomesticos">Por electrodomésticos</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="ubicacion">Ubicación para HSP</label>
-                <select id="ubicacion" class="input-field" aria-label="Seleccionar ubicación">
-                    <option value="5.5">Noroeste (Jujuy, Salta, Tucumán)</option>
-                    <option value="5.0">Cuyo (Mendoza, San Juan)</option>
-                    <option value="4.5">Centro (Córdoba, Santa Fe)</option>
-                    <option value="4.0">Pampeana (Buenos Aires, La Pampa)</option>
-                    <option value="3.5">Patagonia (Chubut, Santa Cruz)</option>
-                    <option value="auto">Detectar automáticamente (usar mi ubicación)</option>
-                </select>
-                <div class="error-message" id="errorUbicacion"></div>
-            </div>
-
-            <div id="facturaSection" class="input-group">
-                <label for="consumoMensual">Consumo mensual (kWh)</label>
-                <input type="number" id="consumoMensual" class="input-field" placeholder="Ej: 450">
-                <div class="error-message" id="errorConsumo"></div>
-            </div>
-
-            <div id="electrodomesticosSection" class="hidden">
-                <div class="input-group">
-                    <label for="buscarElectro">Buscar electrodoméstico</label>
-                    <input type="text" id="buscarElectro" class="input-field" placeholder="Ej: Heladera" oninput="filtrarElectrodomesticos(this.value)">
-                </div>
-                <div id="listaElectro">
-                    <!-- Los electrodomésticos se cargarán dinámicamente aquí -->
-                </div>
-                <button type="button" onclick="agregarElectro()" class="add-button">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                    </svg>
-                    Añadir dispositivo
-                </button>
-                <div class="error-message" id="errorElectro"></div>
-            </div>
-        </div>
-
-        <button class="primary-button" onclick="calcularSistema()">
-            Calcular sistema solar
-        </button>
-
-        <div id="resultados" class="results-panel">
-            <h2 class="results-title">Recomendación de sistema</h2>
-            <div class="result-item">
-                <span>Paneles solares:</span>
-                <span class="result-value" id="panelesResultado">-</span>
-            </div>
-            <div class="result-item">
-                <span>Capacidad de baterías:</span>
-                <span class="result-value" id="bateriasResultado">-</span>
-            </div>
-            <div class="result-item">
-                <span>Inversor recomendado:</span>
-                <span class="result-value" id="inversorResultado">-</span>
-            </div>
-        </div>
+  <!-- Encabezado con título y navegación -->
+  <header>
+    <div class="header-container">
+      <h1>Calculadora Solar Profesional</h1>
+      <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+          <li><a href="#about">Acerca de</a></li>
+          <li><a href="contacto.html" target="_blank">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+  
+  <!-- Contenido principal -->
+  <main>
+    <div class="container">
+      <h1>Calculadora Solar Inteligente</h1>
+      
+      <div class="control-section">
+        <!-- Selección del método de cálculo -->
+        <div class="input-group">
+          <label for="metodocalculo">Método de cálculo</label>
+          <select id="metodocalculo" class="input-field">
+            <option value="factura">Por factura eléctrica</option>
+            <option value="electrodomesticos">Por electrodomésticos</option>
+          </select>
+        </div>
 
-    <script src="js/main.js"></script>
+        <!-- Selección de ubicación para el cálculo de HSP -->
+        <div class="input-group">
+          <label for="ubicacion">Ubicación para HSP</label>
+          <select id="ubicacion" class="input-field">
+            <option value="5.5">Noroeste (Jujuy, Salta, Tucumán)</option>
+            <option value="5.0">Cuyo (Mendoza, San Juan)</option>
+            <option value="4.5">Centro (Córdoba, Santa Fe)</option>
+            <option value="4.0">Pampeana (Buenos Aires, La Pampa)</option>
+            <option value="3.5">Patagonia (Chubut, Santa Cruz)</option>
+            <option value="auto">Detectar automáticamente</option>
+          </select>
+        </div>
+
+        <!-- Sección para cálculo por factura -->
+        <div id="facturaSection" class="input-group">
+          <label for="consumoMensual">Consumo mensual (kWh)</label>
+          <input type="number" id="consumoMensual" class="input-field" placeholder="Ej: 450">
+        </div>
+
+        <!-- Sección para cálculo por electrodomésticos -->
+        <div id="electrodomesticosSection" class="hidden">
+          <div class="input-group">
+            <label for="buscarElectro">Buscar electrodoméstico</label>
+            <input type="text" id="buscarElectro" class="input-field" placeholder="Ej: Heladera" oninput="filtrarElectrodomesticos(this.value)">
+          </div>
+          <div id="listaElectro"></div>
+          <button type="button" onclick="agregarElectro()" class="add-button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+            </svg>
+            Añadir dispositivo
+          </button>
+        </div>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="button-group">
+        <button class="primary-button" onclick="calcularSistema()">
+          Calcular sistema solar
+        </button>
+        <button class="secondary-button" onclick="limpiarCampos()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+          Limpiar todo
+        </button>
+      </div>
+
+      <!-- Resultados del cálculo -->
+      <div id="resultados" class="results-panel">
+        <h2 class="results-title">Recomendación de sistema</h2>
+        <div class="result-item">
+          <span>Paneles solares:</span>
+          <span class="result-value" id="panelesResultado">-</span>
+        </div>
+        <div class="result-item">
+          <span>Capacidad de baterías:</span>
+          <span class="result-value" id="bateriasResultado">-</span>
+        </div>
+        <div class="result-item">
+          <span>Inversor recomendado:</span>
+          <span class="result-value" id="inversorResultado">-</span>
+        </div>
+        <!-- Botón para contacto vía WhatsApp -->
+        <a id="whatsappButton" class="whatsapp-button hidden" target="_blank">
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Pie de página con información de contacto -->
+  <footer>
+    <div class="footer-container">
+      <div class="contact-info">
+        <p>Contacto: info@tuempresa.com | +54 11 1234-5678</p>
+      </div>
+      <div class="legal">
+        <p><a href="#terminos">Términos y Condiciones de Uso</a> | Derechos Reservados © 2025 TuEmpresa.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Enlace al script principal -->
+  <script src="js/main.js"></script>
 </body>
 </html>

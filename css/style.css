@@ -1,70 +1,68 @@
 :root {
-    /* Definición de variables globales para colores y estilos */
-    --primary: #2B6B3D; /* Color primario */
-    --secondary: #FFA726; /* Color secundario */
-    --accent: #42A5F5; /* Color de acento */
-    --background: #F8F9FA; /* Color de fondo */
-    --text: #2C3E50; /* Color del texto principal */
-    --white: #FFFFFF; /* Color blanco */
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Sombra para elementos */
-    --radius: 16px; /* Radio de borde para contenedores redondeados */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave para interacciones */
-}
-
-/* Estilos generales del cuerpo */
-body {
+    --primary: #2B6B3D;
+    --secondary: #FFA726;
+    --accent: #42A5F5;
+    --background: #F8F9FA;
+    --text: #2C3E50;
+    --white: #FFFFFF;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --radius: 16px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  body {
     font-family: 'Inter', sans-serif;
-    background: var(--background);
+    background: #f8f9fa;
     color: var(--text);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-/* Estilos del encabezado */
-header {
+  }
+  
+  /* Header styling */
+  header {
     background: var(--primary);
     color: var(--white);
     padding: 1rem 2rem;
-}
-
-.header-container {
+  }
+  
+  .header-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header h1 {
+  }
+  
+  header h1 {
     margin: 0;
     font-size: 1.8rem;
-}
-
-header nav ul {
+  }
+  
+  header nav ul {
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
-}
-
-header nav ul li {
+  }
+  
+  header nav ul li {
     margin-left: 1.5rem;
-}
-
-header nav ul li a {
+  }
+  
+  header nav ul li a {
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
-}
-
-header nav ul li a:hover {
+  }
+  
+  header nav ul li a:hover {
     color: var(--secondary);
-}
-
-/* Contenedor principal */
-.container {
+  }
+  
+  /* Contenedor principal */
+  .container {
     max-width: 800px;
     margin: 2rem auto;
     background: var(--white);
@@ -72,10 +70,9 @@ header nav ul li a:hover {
     box-shadow: var(--shadow);
     padding: 2rem;
     position: relative;
-}
-
-/* Línea decorativa en la parte superior del contenedor */
-.container::before {
+  }
+  
+  .container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -84,18 +81,17 @@ header nav ul li a:hover {
     height: 6px;
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     border-radius: var(--radius) var(--radius) 0 0;
-}
-
-/* Estilos para títulos */
-h1 {
+  }
+  
+  h1 {
     color: var(--primary);
     font-size: 2rem;
     text-align: center;
     margin: 0 0 2rem 0;
     position: relative;
-}
-
-h1::after {
+  }
+  
+  h1::after {
     content: '';
     position: absolute;
     bottom: -12px;
@@ -104,47 +100,54 @@ h1::after {
     width: 60px;
     height: 3px;
     background: var(--secondary);
-}
-
-/* Sección de entrada de datos */
-.control-section {
+  }
+  
+  .control-section {
     background: var(--background);
     border-radius: var(--radius);
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.input-group {
+  }
+  
+  .input-group {
+    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
 }
-
-.input-group label {
+  
+  .input-group label {
+    display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: var(--primary);
     font-size: 0.9rem;
-}
-
-.input-field {
+  }
+  
+  .input-field {
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.8rem 3rem 0.8rem 1rem;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 1rem;
     transition: var(--transition);
     background: var(--white);
-}
-
-.input-field:focus {
+  }
+  
+  .input-field:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(43, 107, 61, 0.1);
     outline: none;
-}
+  }
 
-/* Tarjetas para electrodomésticos */
-.appliance-card {
+  .input-group .input-field {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box; /* Evita que el padding aumente el tamaño total */
+}
+  
+  .appliance-card {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -153,7 +156,16 @@ h1::after {
     background: var(--white);
     border-radius: 8px;
     box-shadow: var(--shadow);
+    position: relative;
     flex-wrap: wrap;
+ }
+
+ .appliance-card input {
+    width: 70px;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 .appliance-card button {
@@ -174,8 +186,171 @@ h1::after {
     background: #bb2d3b;
 }
 
-/* Botón de WhatsApp */
-.whatsapp-button {
+.appliance-card button svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+}
+  
+  .horas-container {
+    position: relative;
+    width: 120px;
+  }
+  
+  .horas-container input {
+    padding-right: 2.5rem;
+  }
+  
+  .horas-label {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    pointer-events: none;
+  }
+  
+  .delete-btn {
+    background: #dc3545;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+  }
+  
+  .delete-btn:hover {
+    background: #bb2d3b;
+  }
+  
+  .delete-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .primary-button,
+  .secondary-button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .appliance-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .appliance-card select,
+    .appliance-card input {
+        width: 100%;
+        max-width: none;
+    }
+}
+  
+  .primary-button {
+    background: var(--primary);
+    color: var(--white);
+  }
+  
+  .primary-button:hover {
+    background: #1F4D2E;
+  }
+  
+  .secondary-button {
+    background: #6c757d;
+    color: var(--white);
+  }
+  
+  .secondary-button:hover {
+    background: #5a6268;
+  }
+  
+  .results-panel {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--primary) 0%, #1F4D2E 100%);
+    color: var(--white);
+    border-radius: var(--radius);
+  }
+  
+  .result-item {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .result-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary);
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+      margin: 0.5rem;
+    }
+    
+    .appliance-card {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      padding: 0.8rem;
+    }
+    
+    .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+    
+    h1 {
+      font-size: 1.6rem;
+    }
+    
+    .button-group {
+      flex-direction: column;
+    }
+    
+    .horas-container {
+      width: 100%;
+    }
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: none;
+  }
+  
+  .input-error {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+  }
+  
+  /* Botón de WhatsApp */
+  .whatsapp-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,35 +363,54 @@ h1::after {
     font-weight: 600;
     margin-top: 1.5rem;
     transition: var(--transition);
-}
-
-.whatsapp-button:hover {
+  }
+  
+  .whatsapp-button:hover {
     background: #128C7E;
-}
-
-/* Estilos del pie de página */
-footer {
+  }
+  
+  .whatsapp-button svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+  
+  .hidden {
+    display: none !important;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  /* Footer styling */
+  footer {
     background: #333;
     color: #fff;
     padding: 1rem 2rem;
     text-align: center;
-}
-
-.footer-container {
+  }
+  
+  .footer-container {
     max-width: 800px;
     margin: 0 auto;
-}
-
-.footer-container a {
+  }
+  
+  .footer-container .contact-info,
+  .footer-container .legal {
+    margin: 0.5rem 0;
+  }
+  
+  .footer-container a {
     color: var(--secondary);
     text-decoration: none;
-}
-
-.footer-container a:hover {
+  }
+  
+  .footer-container a:hover {
     text-decoration: underline;
-}
-
-/* Sección de contacto */
+  }
+  
+/*Contacto */
 .contact-container {
     max-width: 800px;
     margin: 3rem auto;

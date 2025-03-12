@@ -1,0 +1,132 @@
+/* =========================================
+   VARIABLES Y ESTILOS BASE
+   ========================================= */
+
+/**
+ * Variables CSS globales
+ * Definición de colores, espaciados y efectos utilizados en todo el sitio
+ * Facilita la consistencia visual y permite cambios rápidos en todo el diseño
+ */
+ :root {
+  /* Colores principales del tema */
+  --primary-color: #FFB400;    /* Amarillo/dorado para elementos destacados */
+  --secondary-color: #2196F3;  /* Azul para elementos secundarios */
+  
+  /* Colores de fondo */
+  --dark-bg: #212529;          /* Fondo oscuro para secciones con contraste */
+  --light-bg: #f8f9fa;         /* Fondo claro para secciones principales */
+  
+  /* Colores de texto */
+  --text-dark: #212529;        /* Texto oscuro para fondos claros */
+  --text-light: #ffffff;       /* Texto claro para fondos oscuros */
+  --text-muted: #6c757d;       /* Texto con menor énfasis */
+  
+  /* Propiedades de diseño */
+  --border-radius: 10px;       /* Redondeo de esquinas consistente */
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra estándar para elementos */
+  --transition: all 0.3s ease; /* Transición suave para efectos hover */
+}
+
+/**
+ * Reset básico de estilos
+ * Elimina márgenes y rellenos predeterminados
+ * Asegura que el modelo de caja sea consistente
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**
+ * Comportamiento de desplazamiento suave
+ * Permite transiciones suaves al navegar entre secciones
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Estilos base para el cuerpo del documento
+ * Define la tipografía principal, interlineado y colores base
+ */
+body {
+  font-family: 'Nunito', sans-serif; /* Fuente principal para el texto */
+  line-height: 1.6;                  /* Interlineado para mejor legibilidad */
+  color: var(--text-dark);           /* Color de texto predeterminado */
+  background-color: #fff;            /* Fondo blanco predeterminado */
+}
+
+/**
+ * Estilos para encabezados
+ * Define la tipografía, peso y espaciado para todos los niveles de encabezados
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Inter', sans-serif; /* Fuente diferenciada para encabezados */
+  font-weight: 700;                 /* Peso negrita para mayor énfasis */
+  margin-bottom: 1rem;              /* Espacio inferior consistente */
+}
+
+/**
+ * Estilos para párrafos
+ * Asegura un espaciado consistente entre bloques de texto
+ */
+p {
+  margin-bottom: 1rem; /* Espacio inferior para separar párrafos */
+}
+
+/**
+ * Estilos para enlaces
+ * Define apariencia y comportamiento de los enlaces en todo el sitio
+ */
+a {
+  color: var(--secondary-color);  /* Color azul para enlaces */
+  text-decoration: none;          /* Sin subrayado por defecto */
+  transition: var(--transition);  /* Transición suave al cambiar estados */
+}
+
+/**
+ * Efecto hover para enlaces
+ * Cambia el color al pasar el cursor para indicar interactividad
+ */
+a:hover {
+  color: var(--primary-color); /* Cambia a color primario en hover */
+}
+
+/**
+ * Comportamiento responsivo para imágenes
+ * Asegura que las imágenes no desborden sus contenedores
+ */
+img {
+  max-width: 100%;  /* Limita el ancho al contenedor */
+  height: auto;     /* Mantiene la proporción de aspecto */
+}
+
+/**
+ * Utilidad para centrar texto
+ * Clase auxiliar para alinear texto horizontalmente
+ */
+.text-center {
+  text-align: center;
+}
+
+/**
+ * Espaciador mediano
+ * Crea espacio vertical de tamaño medio entre elementos
+ */
+.spacer-md {
+  height: 2rem;
+}
+
+/**
+ * Espaciador grande
+ * Crea espacio vertical amplio entre secciones
+ */
+.spacer-lg {
+  height: 4rem;
+}

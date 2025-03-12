@@ -1,126 +1,565 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora Solar Profesional</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="UV Energía Solar - Soluciones integrales en energía solar para hogares y empresas en Argentina. Paneles solares, instalación y mantenimiento profesional.">
+    <meta name="language" content="Spanish">
+
+    <!-- Favicon links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Font preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Title -->
+    <title>UV Energía Solar | Soluciones de Energía Solar - Ingeniería y Servicios</title>
+
+    <!-- Font Awesome icons -->
+    <!-- Actualizar enlace Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-...tu-hash-aquí..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Google fonts - Combined into one request -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Nunito:wght@200;300;400;600;700;800;900&family=Varela+Round&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet">
 </head>
-<body>
-  <!-- Encabezado con título y navegación -->
-  <header>
-    <div class="header-container">
-      <h1>Calculadora Solar Profesional</h1>
-      <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-          <li><a href="#about">Acerca de</a></li>
-          <li><a href="contacto.html" target="_blank">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  
-  <!-- Contenido principal -->
-  <main>
-    <div class="container">
-      <h1>Calculadora Solar Inteligente</h1>
-      
-      <div class="control-section">
-        <!-- Selección del método de cálculo -->
-        <div class="input-group">
-          <label for="metodocalculo">Método de cálculo</label>
-          <select id="metodocalculo" class="input-field">
-            <option value="factura">Por factura eléctrica</option>
-            <option value="electrodomesticos">Por electrodomésticos</option>
-          </select>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logouv.png" alt="UV Energía Solar" class="nav-logo">
+                UV Energía Solar
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarNav">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calculadora">Calculadora Solar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aprende.html">Aprende</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <!-- Carousel background -->
+        <div class="masthead-carousel">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="slide-image slide-image-1"></div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="slide-image slide-image-2"></div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="slide-image slide-image-3"></div>
+                    </div>
+                </div>
+                <!-- Add pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
 
-        <!-- Selección de ubicación para el cálculo de HSP -->
-        <div class="input-group">
-          <label for="ubicacion">Ubicación para HSP</label>
-          <select id="ubicacion" class="input-field">
-            <option value="5.5">Noroeste (Jujuy, Salta, Tucumán)</option>
-            <option value="5.0">Cuyo (Mendoza, San Juan)</option>
-            <option value="4.5">Centro (Córdoba, Santa Fe)</option>
-            <option value="4.0">Pampeana (Buenos Aires, La Pampa)</option>
-            <option value="3.5">Patagonia (Chubut, Santa Cruz)</option>
-            <option value="auto">Detectar automáticamente</option>
-          </select>
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">UV Energía Solar</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Soluciones de energía solar para un futuro sostenible.
+                    </h2>
+
+                    <!-- Añadido espacio adicional con un div -->
+                    <div class="spacer-md"></div>
+
+                    <section class="benefits-section" id="benefits">
+                        <div class="container">
+                            <div class="benefits-container">
+                                <!-- Tarjeta 1: Ahorra tiempo -->
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="40"
+                                            height="40" fill="#ffffff">
+                                            <path
+                                                d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="benefit-title">Ahorra tiempo</h3>
+                                    <p class="benefit-description">No tienes que pasar horas comparando y buscando las
+                                        mejores tarifas y puedes pasar más tiempo con los tuyos.</p>
+                                </div>
+
+                                <!-- Tarjeta 2: Ahorra dinero -->
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="40"
+                                            height="40" fill="#ffffff">
+                                            <path
+                                                d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="benefit-title">Ahorra dinero</h3>
+                                    <p class="benefit-description">El servicio es completamente gratuito y sin
+                                        compromiso. Una vez hayas recibido las ofertas, tú decides si aceptas o no.</p>
+                                </div>
+
+                                <!-- Tarjeta 3: Ofertas personalizadas -->
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="40"
+                                            height="40" fill="#ffffff">
+                                            <path
+                                                d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352h117.4c73.6 0 133.3 59.7 133.3 133.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="benefit-title">Ofertas personalizadas</h3>
+                                    <p class="benefit-description">Varias compañías compiten por ofrecerte directamente
+                                        sus mejores ofertas de placas solares. Habla con las empresas directamente.</p>
+                                </div>
+                            </div>
+
+                            <!-- Botón de calculadora (movido fuera del benefits-container) -->
+                            <div class="calculator-button-container">
+                                <a href="#calculadora" class="calculator-button">
+                                    <i class="fas fa-calculator"></i> Calcular mi instalación solar
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="nosotros">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="about-title">Nosotros</h2>
+                    <div class="about-title-underline"></div>
+                    <p class="about-subtitle">UV Energía Solar es una empresa líder en soluciones de energía renovable,
+                        especializada en el diseño, instalación y mantenimiento de sistemas fotovoltaicos.</p>
+                </div>
+            </div>
+
+            <!-- Imagen decorativa con efecto parallax -->
+            <div class="about-image-container">
+                <img src="assets/img/ipad.jpg" alt="Equipo UV Energía Solar" class="about-image"
+                    title="Equipo UV Energía Solar">
+                <div class="about-image-overlay"></div>
+            </div>
+
+            <div class="row gx-4 gx-lg-5 mt-5">
+                <div class="col-md-6 mb-4">
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="about-card-title">Nuestra Misión</h3>
+                        <p class="about-card-text">Proporcionar soluciones energéticas sostenibles y accesibles que
+                            reduzcan la huella de carbono y promuevan la independencia energética de nuestros clientes.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="about-card">
+                        <div class="about-card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="about-card-title">Nuestra Visión</h3>
+                        <p class="about-card-text">Ser líderes en la transición hacia un futuro energético más limpio y
+                            sostenible, impulsando la adopción de energías renovables en toda la región.</p>
+                    </div>
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="about-card about-card-wide">
+                        <div class="about-card-icon-large">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="about-card-title">¿Por qué elegirnos?</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="about-feature">
+                                    <i class="fas fa-check about-check-icon"></i>
+                                    <span>Más de 5 años de experiencia</span>
+                                </div>
+                                <div class="about-feature">
+                                    <i class="fas fa-check about-check-icon"></i>
+                                    <span>Equipos de alta calidad certificados</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="about-feature">
+                                    <i class="fas fa-check about-check-icon"></i>
+                                    <span>Servicio técnico especializado</span>
+                                </div>
+                                <div class="about-feature">
+                                    <i class="fas fa-check about-check-icon"></i>
+                                    <span>Garantía en todos nuestros productos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contador de estadísticas -->
+            <div class="about-stats-container">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-3 col-6">
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">150+</div>
+                            <div class="about-stat-label">Proyectos completados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">98%</div>
+                            <div class="about-stat-label">Clientes satisfechos</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">5+</div>
+                            <div class="about-stat-label">Años de experiencia</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="about-stat-item">
+                            <div class="about-stat-number">1.2MW</div>
+                            <div class="about-stat-label">Potencia instalada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="proyectos">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8 text-center mb-5">
+                    <h2 class="projects-title">Nuestros Proyectos</h2>
+                    <div class="projects-title-underline"></div>
+                    <p class="projects-subtitle">Conoce algunos de nuestros proyectos más destacados en energía solar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-container">
+                <div class="project-image-container">
+                    <img src="assets/img/nosotros3.jpg" alt="Instalación Residencial">
+                    <div class="project-image-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Instalación Residencial</h3>
+                    <p class="project-description">Residencial 5kW. Sistema fotovoltaico completo para una vivienda
+                        familiar, permitiendo un ahorro del 80% en la factura eléctrica y proporcionando energía de
+                        respaldo durante cortes.</p>
+                    <ul class="project-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                            12 paneles solares de 400W
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                            Inversor híbrido de 5kW
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                            Sistema de monitoreo remoto
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="project-cta">Solicitar información</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-container">
+                <div class="project-image-container">
+                    <img src="assets/img/campo1.png" alt="Instalación Rural">
+                    <div class="project-image-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Instalación Rural</h3>
+                    <p class="project-description">Rural 30kW. Implementación de un sistema solar para una empresa
+                        local, reduciendo costos operativos y mejorando su perfil de sostenibilidad ambiental.</p>
+                    <ul class="project-features">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                            38 paneles solares de alta eficiencia
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                            Inversores trifásicos de 30kW
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                            </svg>
+                            Estructura de montaje personalizada
+                        </li>
+                    </ul>
+                    <a href="#contacto" class="project-cta">Solicitar información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculadora Solar -->
+    <!-- Calculadora Solar -->
+    <section class="calculator-section" id="calculadora">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="calculator-title text-center">Calculadora Solar Inteligente</h2>
+                    <div class="calculator-container">
+                        <div class="calculator-form-group">
+                            <label for="metodocalculo" class="calculator-label">Método de cálculo</label>
+                            <select id="metodocalculo" class="calculator-select" onchange="cambiarMetodoCalculo()">
+                                <option value="electrodomesticos">Por electrodomésticos</option>
+                                <option value="factura" selected>Por factura de luz</option>
+                            </select>
+                        </div>
+
+                        <div id="electrodomesticosSection" class="hidden">
+                            <div class="calculator-form-group">
+                                <label for="categoriasSelect" class="calculator-label">Categoría:</label>
+                                <select id="categoriasSelect" class="calculator-select">
+                                    <option value="">-- Seleccionar categoría --</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator-form-group">
+                                <label for="electroSelect" class="calculator-label">Electrodoméstico:</label>
+                                <select id="electroSelect" class="calculator-select" onchange="actualizarPotencia()">
+                                    <option value="">-- Seleccionar --</option>
+                                </select>
+                            </div>
+
+                            <div class="calculator-form-group" id="potenciaCustom" style="display: none;">
+                                <label for="potenciaInput" class="calculator-label">Potencia (W):</label>
+                                <input type="number" id="potenciaInput" class="calculator-input" min="1" max="10000"
+                                    placeholder="Ingresa la potencia en watts">
+                            </div>
+
+                            <div class="calculator-form-group">
+                                <label for="horasUsoInput" class="calculator-label">Horas de uso diario:</label>
+                                <input type="number" id="horasUsoInput" class="calculator-input" value="5" min="0.5"
+                                    max="24" step="0.5">
+                            </div>
+
+                            <button type="button" class="add-appliance-btn" onclick="agregarElectro()">
+                                <i class="fas fa-plus"></i> Agregar electrodoméstico
+                            </button>
+
+                            <table class="appliance-table">
+                                <thead>
+                                    <tr>
+                                        <th>Electrodoméstico</th>
+                                        <th>Potencia (W)</th>
+                                        <th>Horas/día</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listaElectro">
+                                    <!-- Aquí se agregarán los electrodomésticos -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="facturaSection" class="calculator-form-group">
+                            <label for="consumoMensual" class="calculator-label">Consumo mensual (kWh)</label>
+                            <input type="number" id="consumoMensual" class="calculator-input" min="1" max="10000"
+                                placeholder="Ingrese el consumo de su factura">
+                        </div>
+
+                        <div class="calculator-form-group">
+                            <label for="ubicacion" class="calculator-label">Ubicación:</label>
+                            <select id="ubicacion" class="calculator-select">
+                                <option value="norte">Norte de Argentina</option>
+                                <option value="centro" selected>Centro de Argentina</option>
+                                <option value="sur">Sur de Argentina</option>
+                            </select>
+                        </div>
+
+                        <!-- Botones de la calculadora -->
+                        <div class="calculator-button-container">
+                            <button type="button" id="calcularBtn" class="calculator-button"
+                                onclick="calcularSistema()">
+                                <i class="fas fa-calculator"></i> Calcular sistema
+                            </button>
+                            <button type="reset" id="reiniciarBtn" class="calculator-button"
+                                onclick="limpiarFormulario()">
+                                <i class="fas fa-redo"></i> Reiniciar
+                            </button>
+                        </div>
+
+                        <!-- Mensaje de error -->
+                        <div id="mensajeError" class="error-message hidden mt-3"></div>
+
+                        <!-- Resultados de la calculadora -->
+                        <div id="resultados" class="calculator-results hidden">
+                            <h3 class="calculator-results-title">Resultados del sistema solar recomendado</h3>
+
+                            <div class="calculator-result-item">
+                                <span class="result-label">Paneles solares:</span>
+                                <span id="panelesResultado" class="result-value">-</span>
+                            </div>
+
+                            <div class="calculator-result-item">
+                                <span class="result-label">Baterías:</span>
+                                <span id="bateriasResultado" class="result-value">-</span>
+                            </div>
+
+                            <div class="calculator-result-item">
+                                <span class="result-label">Inversor:</span>
+                                <span id="inversorResultado" class="result-value">-</span>
+                            </div>
+
+                            <div class="mt-4">
+                                <!-- Add this after the calculator results section -->
+                                <a href="#" id="whatsappButton" class="whatsapp-button hidden">
+                                    <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Sección de Contacto -->
+      <section id="contacto" class="contact-section">
+        <!-- Mapa de fondo -->
+        <div class="contact-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.9184819969632!2d-65.58982192486836!3d-27.347016911489455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423cf5b756c5319%3A0xff3042ee6168a5f4!2zSm9hcXXDrW4gVi4gR29uesOhbGV6IDUwLCBUNDE0NiBDb25jZXBjacOzbiwgVHVjdW3DoW4!5e0!3m2!1ses!2sar!4v1741663382553!5m2!1ses!2sar"
+                class="contact-map-iframe" allowfullscreen="" loading="lazy" 
+                title="Ubicación de UV Energía Solar en Joaquín V. González 50, Concepción, Tucumán"></iframe>
         </div>
 
-        <!-- Sección para cálculo por factura -->
-        <div id="facturaSection" class="input-group">
-          <label for="consumoMensual">Consumo mensual (kWh)</label>
-          <input type="number" id="consumoMensual" class="input-field" placeholder="Ej: 450">
-        </div>
+        <div class="container contact-container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contáctanos</h2>
+                <div class="section-divider"></div>
+            </div>
 
-        <!-- Sección para cálculo por electrodomésticos -->
-        <div id="electrodomesticosSection" class="hidden">
-          <div class="input-group">
-            <label for="buscarElectro">Buscar electrodoméstico</label>
-            <input type="text" id="buscarElectro" class="input-field" placeholder="Ej: Heladera" oninput="filtrarElectrodomesticos(this.value)">
-          </div>
-          <div id="listaElectro"></div>
-          <button type="button" onclick="agregarElectro()" class="add-button">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-            </svg>
-            Añadir dispositivo
-          </button>
-        </div>
-      </div>
+            <div class="contact-boxes-container">
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-title">DIRECCIÓN</h3>
+                    <p class="contact-text">Joaquín V. González 50, T4116<br>Concepción, Tucumán</p>
+                </div>
 
-      <!-- Botones de acción -->
-      <div class="button-group">
-        <button class="primary-button" onclick="calcularSistema()">
-          Calcular sistema solar
-        </button>
-        <button class="secondary-button" onclick="limpiarCampos()">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-          </svg>
-          Limpiar todo
-        </button>
-      </div>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">EMAIL</h3>
+                    <p class="contact-text">
+                        <a href="mailto:info@uvenergiasolar.com" class="contact-link">info@uvenergiasolar.com</a>
+                    </p>
+                </div>
 
-      <!-- Resultados del cálculo -->
-      <div id="resultados" class="results-panel">
-        <h2 class="results-title">Recomendación de sistema</h2>
-        <div class="result-item">
-          <span>Paneles solares:</span>
-          <span class="result-value" id="panelesResultado">-</span>
+                <div class="contact-box">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-title">TELÉFONO</h3>
+                    <p class="contact-text">
+                        <a href="tel:+5493865586322" class="contact-link">+54 9 3865 58-6322</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="result-item">
-          <span>Capacidad de baterías:</span>
-          <span class="result-value" id="bateriasResultado">-</span>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-copyright">Copyright © UV Energía Solar 2025</div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
-        <div class="result-item">
-          <span>Inversor recomendado:</span>
-          <span class="result-value" id="inversorResultado">-</span>
-        </div>
-        <!-- Botón para contacto vía WhatsApp -->
-        <a id="whatsappButton" class="whatsapp-button hidden" target="_blank">
-          Consultar por WhatsApp
-        </a>
-      </div>
-    </div>
-  </main>
-  
-  <!-- Pie de página con información de contacto -->
-  <footer>
-    <div class="footer-container">
-      <div class="contact-info">
-        <p>Contacto: info@tuempresa.com | +54 11 1234-5678</p>
-      </div>
-      <div class="legal">
-        <p><a href="#terminos">Términos y Condiciones de Uso</a> | Derechos Reservados © 2025 TuEmpresa.</p>
-      </div>
-    </div>
-  </footer>
-  
-  <!-- Enlace al script principal -->
-  <script src="js/main.js"></script>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/calculadora.js"></script>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>

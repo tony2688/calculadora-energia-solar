@@ -1,0 +1,502 @@
+/* =========================================
+   ESTILOS PARA LA PÁGINA DE APRENDIZAJE
+   ========================================= */
+
+/* Header de la página de aprendizaje */
+.learn-header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%), url("../assets/img/imagen2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+  
+  .learn-header h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 0.2rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .learn-header h2 {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Secciones generales */
+  .learn-intro-section,
+  .learn-components-section,
+  .learn-resources-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+  }
+  
+  .learn-benefits-section,
+  .learn-faq-section {
+    padding: 5rem 0;
+    background-color: #ffffff;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #0056b3;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .section-divider {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #FFB400, #0056b3);
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+  }
+  
+  .learn-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Tarjetas de beneficios */
+  .learn-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #FFB400;
+  }
+  
+  .learn-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .learn-card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #FFB400 0%, #FF9800 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
+  }
+  
+  .learn-card-title {
+    font-size: 1.3rem;
+    color: #0056b3;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .learn-card-text {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  /* Tarjetas de componentes */
+  .learn-component-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .learn-component-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .learn-component-image {
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .learn-component-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .learn-component-card:hover .learn-component-image img {
+    transform: scale(1.05);
+  }
+  
+  .learn-component-info {
+    padding: 1.5rem;
+  }
+  
+  .learn-component-title {
+    font-size: 1.3rem;
+    color: #0056b3;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .learn-component-text {
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Preguntas frecuentes */
+  .learn-faq-item {
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+  }
+  
+  .learn-faq-question {
+    padding: 1.2rem 1.5rem;
+    background-color: #f8f9fa;
+    color: #0056b3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    border-left: 4px solid #FFB400;
+  }
+  
+  .learn-faq-answer {
+    padding: 1.5rem;
+    background-color: #ffffff;
+  }
+  
+  .learn-faq-answer p {
+    margin: 0;
+    color: #495057;
+    line-height: 1.7;
+  }
+  
+  /* Recursos educativos */
+  .learn-resource-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #0056b3;
+  }
+  
+  .learn-resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .learn-resource-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+  }
+  
+  .learn-resource-title {
+    font-size: 1.3rem;
+    color: #0056b3;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .learn-resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .learn-resource-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .learn-resource-list li:before {
+    content: "•";
+    color: #FFB400;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.5rem;
+  }
+  
+  .learn-resource-link {
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .learn-resource-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Sección de llamada a la acción */
+  .learn-cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.9) 0%, rgba(0, 123, 255, 0.9) 100%), url("../assets/img/solar-cta-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    color: #ffffff;
+  }
+  
+  .learn-cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+  }
+  
+  .learn-cta-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .learn-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .learn-cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary.learn-cta-button {
+    background-color: #FFB400;
+    border-color: #FFB400;
+    color: #212529;
+  }
+  
+  .btn-primary.learn-cta-button:hover {
+    background-color: #FFA000;
+    border-color: #FFA000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 180, 0, 0.4);
+  }
+  
+  .btn-secondary.learn-cta-button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+  
+  .btn-secondary.learn-cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 767.98px) {
+    .learn-header {
+      padding: 10rem 0;
+    }
+    
+    .learn-header h1 {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+    
+    .learn-header h2 {
+      font-size: 1.2rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .learn-component-card {
+      margin-bottom: 2rem;
+    }
+    
+    .learn-cta-title {
+      font-size: 2rem;
+    }
+    
+    .learn-cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .learn-cta-button {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 1rem;
+    }
+  }
+
+/* Sección de Tecnologías */
+.learn-technologies-section {
+  padding: 5rem 0;
+  background-color: #ffffff;
+}
+
+.learn-technology-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #0056b3;
+}
+
+.learn-technology-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.learn-technology-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.learn-technology-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.learn-technology-card:hover .learn-technology-image img {
+  transform: scale(1.05);
+}
+
+.learn-technology-info {
+  padding: 1.8rem;
+}
+
+.learn-technology-title {
+  font-size: 1.4rem;
+  color: #0056b3;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.learn-technology-text {
+  color: #495057;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.learn-technology-subtitle {
+  font-size: 1.1rem;
+  color: #212529;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.learn-technology-list {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.learn-technology-list li {
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.learn-technology-comparison {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.learn-comparison-title {
+  color: #0056b3;
+  font-weight: 600;
+}
+
+.learn-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.learn-comparison-table th,
+.learn-comparison-table td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #dee2e6;
+}
+
+.learn-comparison-table th {
+  background-color: #0056b3;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.learn-comparison-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.learn-comparison-table tr:hover {
+  background-color: #e9ecef;
+}
+
+@media (max-width: 767.98px) {
+  .learn-technology-image {
+    height: 180px;
+  }
+  
+  .learn-technology-info {
+    padding: 1.5rem;
+  }
+  
+  .learn-comparison-table th,
+  .learn-comparison-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}

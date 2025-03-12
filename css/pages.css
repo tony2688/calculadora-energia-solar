@@ -1,0 +1,1790 @@
+/* =========================================
+   ESTILOS ESPECÍFICOS DE PÁGINAS
+   ========================================= */
+
+/* =========================================
+   MASTHEAD / CABECERA PRINCIPAL
+   ========================================= */
+
+/**
+ * Configuración global para evitar desbordamiento horizontal
+ * Asegura que el contenido no cause scroll horizontal
+ */
+body,
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/**
+  * Cabecera principal (masthead)
+  * Sección de altura completa con fondo de imagen y gradiente superpuesto
+  */
+.masthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* Cambiamos de 100vh a auto para evitar problemas de altura */
+  min-height: 35rem;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  /* Añadimos padding inferior para dar espacio al botón */
+  overflow: visible;
+  /* Cambiamos de hidden a visible para que el botón no se corte */
+}
+
+.masthead-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.masthead-carousel .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.masthead-carousel .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.masthead-carousel .slide-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.masthead-carousel .swiper-pagination {
+  bottom: 30px;
+}
+
+.masthead-carousel .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
+}
+
+.masthead-carousel .swiper-pagination-bullet-active {
+  background: #FFB400;
+  opacity: 1;
+}
+
+/* Overlay to ensure text readability */
+.masthead::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.6) 100%);
+  /* Gradiente más suave */
+  z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.masthead .container {
+  position: relative;
+  z-index: 2;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  /* Añadimos padding inferior para dar espacio al botón */
+}
+
+/**
+  * Título principal H1 en la cabecera
+  * Con efectos decorativos y animación de brillo
+  */
+.masthead h1 {
+  font-size: 4.5rem;
+  letter-spacing: 0.3rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-bottom: 4px solid #FFB400;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/**
+  * Pseudo-elemento para mostrar logo de fondo
+  * Crea un efecto visual de marca de agua detrás del título
+  */
+.masthead h1::before {
+  display: none;
+}
+
+/**
+  * Pseudo-elemento para efecto de brillo
+  * Crea una animación de barrido luminoso sobre el título
+  */
+.masthead h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  /* Brillo más intenso */
+  z-index: 1;
+  animation: shine 2.5s infinite;
+  /* Animación más rápida */
+  /* Contener la animación dentro del elemento */
+  overflow: hidden;
+}
+
+/**
+  * Subtítulo H2 en la cabecera
+  * Estilo para el texto secundario bajo el título principal
+  */
+.masthead h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  color: #f0f0f0;
+  /* Blanco más cálido */
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/**
+  * Texto descriptivo adicional en la cabecera
+  * Para información complementaria bajo el subtítulo
+  */
+.masthead .subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/**
+  * Contenedor centrado para el título principal
+  * Asegura que el título se mantenga dentro de los límites
+  */
+.masthead .text-center {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Añadimos estilos específicos para el botón de calculadora en el masthead */
+.masthead .calculator-button {
+  margin-top: 2rem;
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+}
+
+/* =========================================
+   SECCIÓN DE BENEFICIOS
+   ========================================= */
+
+/**
+  * Contenedor para las tarjetas de beneficios
+  * Organiza las tarjetas en un layout flexible
+  */
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/**
+  * Tarjeta individual de beneficio
+  * Con efecto de vidrio esmerilado y hover animado
+  */
+.benefit-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 1.2rem;
+  text-align: center;
+  min-width: 220px;
+  max-width: 250px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-left: 3px solid var(--primary-color, #FFB400);
+}
+
+/**
+ * Efecto hover para las tarjetas de beneficio
+ */
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/**
+  * Icono dentro de la tarjeta de beneficio
+  */
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color, #FFB400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.benefit-icon svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/**
+* Título de cada beneficio
+*/
+.benefit-title {
+  font-size: 1.1rem;
+  color: var(--primary-color, #FFB400);
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+
+/**
+ * Descripción del beneficio
+ */
+
+.benefit-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+/**
+  * Descripción de cada beneficio
+  */
+.benefit-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   MASTHEAD / CABECERA PRINCIPAL
+   ========================================= */
+
+/* Estilos para las imágenes de fondo del carrusel */
+.slide-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide-image-1 {
+  background-image: url('../assets/img/nosotros1.jpg');
+}
+
+.slide-image-2 {
+  background-image: url('../assets/img/nosotros3.jpg');
+}
+
+.slide-image-3 {
+  background-image: url('../assets/img/imagen2.jpg');
+}
+
+/* =========================================
+   SECCIÓN NOSOTROS / ABOUT
+   ========================================= */
+/**
+ * Sección principal de Nosotros
+ * Con fondo claro y espaciado adecuado
+ */
+.about-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+/**
+ * Título de la sección Nosotros
+ * Con estilo destacado y tamaño prominente
+ */
+.about-title {
+  color: #0056b3;
+  /* Azul más vibrante */
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+}
+
+/**
+ * Línea decorativa bajo el título
+ * Crea un subrayado visual centrado
+ */
+.about-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFB400, #0056b3);
+  /* Gradiente amarillo a azul */
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/**
+ * Subtítulo descriptivo de la sección
+ * Con estilo más ligero y color secundario
+ */
+.about-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Contenedor para la imagen principal
+ * Con efecto de profundidad y sombra
+ */
+.about-image-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 300px;
+  margin: 3rem auto;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Imagen principal de la sección
+ * Con efecto de zoom suave en hover
+ */
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/**
+ * Efecto hover para la imagen
+ * Aplica un zoom suave al pasar el cursor
+ */
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+/**
+ * Capa de superposición sobre la imagen
+ * Añade un gradiente sutil para mejorar legibilidad
+ */
+.about-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
+}
+
+/**
+ * Tarjeta para información de la empresa
+ * Con efecto de elevación y hover animado
+ */
+.about-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #FFB400;
+  /* Borde superior amarillo */
+}
+
+/**
+ * Efecto hover para las tarjetas
+ * Eleva la tarjeta y aumenta la sombra
+ */
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/**
+ * Tarjeta ancha para características
+ * Versión más amplia de la tarjeta estándar
+ */
+.about-card-wide {
+  margin-top: 2rem;
+}
+
+/**
+ * Icono dentro de la tarjeta
+ * Con fondo circular y color destacado
+ */
+.about-card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #FFB400 0%, #FF9800 100%);
+  /* Gradiente amarillo-naranja */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
+}
+
+/**
+ * Icono grande para la tarjeta de características
+ * Versión más grande del icono estándar
+ */
+.about-card-icon-large {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+  /* Gradiente azul */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
+
+/**
+ * Título de la tarjeta
+ * Con color destacado y tamaño prominente
+ */
+.about-card-title {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/**
+ * Texto dentro de la tarjeta
+ * Con color más suave para mejor legibilidad
+ */
+.about-card-text {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/**
+ * Característica individual con icono
+ * Organiza el icono y texto horizontalmente
+ */
+.about-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+/**
+ * Icono de verificación para características
+ * Con color destacado y tamaño adecuado
+ */
+.about-check-icon {
+  color: var(--primary-color);
+  margin-right: 0.75rem;
+  font-size: 1rem;
+}
+
+/**
+ * Contenedor para estadísticas
+ * Organiza los contadores en un layout flexible
+ */
+.about-stats-container {
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/**
+ * Elemento individual de estadística
+ * Con efecto de hover y transición suave
+ */
+.about-stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  transition: transform 0.3s ease;
+}
+
+/**
+ * Efecto hover para estadísticas
+ * Eleva ligeramente el elemento
+ */
+.about-stat-item:hover {
+  transform: translateY(-5px);
+}
+
+/**
+ * Número destacado en estadísticas
+ * Con tamaño grande y color destacado
+ */
+.about-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * Etiqueta para las estadísticas
+ * Con estilo más sutil y tamaño menor
+ */
+.about-stat-label {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+
+/* =========================================
+    CALCULADORA SOLAR - ESTILOS MODERNOS
+    ========================================= */
+/**
+  * Sección de la calculadora solar
+  * Con fondo degradado y borde decorativo superior
+  */
+.calculator-section {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 5rem 0;
+  position: relative;
+}
+
+/**
+  * Borde decorativo superior de la sección
+  * Crea una línea de color degradado en la parte superior
+  */
+.calculator-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/**
+  * Contenedor principal de la calculadora
+  * Con efecto de elevación y bordes redondeados
+  */
+.calculator-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.07);
+  padding: 2.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/**
+  * Elemento decorativo dentro del contenedor
+  * Crea un círculo de color sutil en la esquina superior derecha
+  */
+.calculator-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(33, 150, 243, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/**
+  * Título de la sección de calculadora
+  * Con línea decorativa inferior
+  */
+.calculator-title {
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/**
+  * Línea decorativa bajo el título
+  * Crea un subrayado de color degradado
+  */
+.calculator-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/**
+  * Grupo de formulario para cada campo de la calculadora
+  * Mantiene organizado cada elemento de entrada
+  */
+.calculator-form-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+/**
+  * Etiqueta para los campos de la calculadora
+  * Con estilo destacado y transición suave
+  */
+.calculator-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/**
+  * Campos de entrada y selección de la calculadora
+  * Con efectos de focus mejorados
+  */
+.calculator-select,
+.calculator-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: var(--text-dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+/**
+  * Estado de focus para los campos de entrada
+  * Eleva ligeramente el campo y añade un resplandor
+  */
+.calculator-select:focus,
+.calculator-input:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15);
+  transform: translateY(-2px);
+}
+
+/**
+  * Contenedor para los botones de la calculadora
+  * Organiza los botones con espaciado uniforme
+  */
+.calculator-button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/**
+  * Botón principal de la calculadora
+  * Con gradiente, sombra y efectos de hover
+  */
+.calculator-button {
+  padding: 0.85rem 1.8rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #FFA000 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 160px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(255, 180, 0, 0.3);
+}
+
+/**
+  * Efecto hover para el botón de la calculadora
+  * Invierte el gradiente y eleva el botón
+  */
+.calculator-button:hover {
+  background: linear-gradient(135deg, #FFA000 0%, var(--primary-color) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 180, 0, 0.4);
+  color: #fff;
+  text-decoration: none;
+}
+
+/**
+  * Efecto active para el botón de la calculadora
+  * Reduce ligeramente la elevación al hacer clic
+  */
+.calculator-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(255, 180, 0, 0.3);
+}
+
+/**
+  * Tabla para mostrar electrodomésticos
+  * Con bordes redondeados y sombra sutil
+  */
+.appliance-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/**
+  * Encabezados de la tabla de electrodomésticos
+  * Con fondo degradado y texto claro
+  */
+.appliance-table th {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #1976D2 100%);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+}
+
+/**
+  * Celdas de la tabla de electrodomésticos
+  * Con bordes sutiles y transición en hover
+  */
+.appliance-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
+  transition: background-color 0.2s ease;
+}
+
+/**
+  * Elimina el borde inferior de la última fila
+  */
+.appliance-table tr:last-child td {
+  border-bottom: none;
+}
+
+/**
+  * Efecto hover para las filas de la tabla
+  */
+.appliance-table tr:hover td {
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+/**
+ * Botón de WhatsApp para contacto
+ * Con colores oficiales de WhatsApp y efectos de hover
+ */
+.whatsapp-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  background-color: #25D366;
+  /* Color verde oficial de WhatsApp */
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/**
+ * Efecto hover para el botón de WhatsApp
+ * Cambia a un tono más oscuro y eleva el botón
+ */
+.whatsapp-button:hover {
+  background-color: #128C7E;
+  /* Verde WhatsApp más oscuro en hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/**
+ * Efecto active para el botón de WhatsApp
+ * Reduce ligeramente la elevación al hacer clic
+ */
+.whatsapp-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+}
+
+/**
+ * Icono dentro del botón de WhatsApp
+ */
+.whatsapp-button i {
+  font-size: 1.3rem;
+}
+
+/**
+ * Botón para eliminar electrodomésticos de la tabla
+ * Con efecto de hover y transición suave
+ */
+.remove-appliance {
+  background: none;
+  border: none;
+  color: #dc3545;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/**
+ * Efecto hover para el botón de eliminar
+ * Añade un fondo sutil y aumenta ligeramente el tamaño
+ */
+.remove-appliance:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #bd2130;
+  transform: scale(1.1);
+}
+
+/**
+ * Botón para agregar electrodoméstico
+ * Con gradiente, sombra y efectos de hover
+ */
+.add-appliance-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #1976D2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+/**
+ * Efecto hover para el botón de agregar
+ * Invierte el gradiente y eleva el botón
+ */
+.add-appliance-btn:hover {
+  background: linear-gradient(135deg, #1976D2 0%, var(--secondary-color) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+}
+
+/**
+ * Efecto active para el botón de agregar
+ * Reduce ligeramente la elevación al hacer clic
+ */
+.add-appliance-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(33, 150, 243, 0.3);
+}
+
+/**
+ * Contenedor para los resultados de la calculadora
+ * Con estilo de tarjeta y borde decorativo lateral
+ */
+.calculator-results {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/**
+ * Borde decorativo lateral de los resultados
+ * Crea una línea de color degradado en el lado izquierdo
+ */
+.calculator-results::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  border-radius: 3px 0 0 3px;
+}
+
+/**
+ * Título de la sección de resultados
+ */
+.calculator-results-title {
+  color: var(--secondary-color);
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/**
+ * Elemento individual de resultado
+ * Con efecto de hover y transición suave
+ */
+.calculator-result-item {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/**
+ * Efecto hover para los elementos de resultado
+ * Eleva ligeramente el elemento y aumenta la sombra
+ */
+.calculator-result-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Etiqueta del resultado (lado izquierdo)
+ */
+.result-label {
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+/**
+ * Valor del resultado (lado derecho)
+ */
+.result-value {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/**
+ * Mensaje de error para la calculadora
+ * Con estilo distintivo para alertar al usuario
+ */
+.error-message {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  border-left: 4px solid #dc3545;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.1);
+}
+
+/**
+ * Clase para ocultar elementos
+ * Con transición de opacidad para efectos suaves
+ */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/**
+ * Animación de aparición gradual
+ */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/**
+ * Keyframes para la animación de aparición
+ * Define el movimiento y cambio de opacidad
+ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   SECCIÓN DE PROYECTOS MEJORADA
+   ========================================= */
+/**
+ * Sección de proyectos
+ * Con fondo degradado y borde decorativo superior
+ */
+.projects-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+}
+
+/**
+ * Borde decorativo superior de la sección
+ * Crea una línea de color degradado en la parte superior
+ */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #FFB400, #2196F3);
+}
+
+/**
+ * Título de la sección de proyectos
+ * Con línea decorativa inferior
+ */
+.projects-title {
+  color: #0056b3;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/**
+ * Contenedor principal para cada proyecto
+ * Con efecto de elevación y bordes redondeados
+ */
+ .project-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/**
+ * Línea decorativa bajo el título
+ * Crea un subrayado de color degradado
+ */
+.projects-title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFB400, #0056b3);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/**
+ * Subtítulo descriptivo de la sección
+ * Con estilo más ligero y color secundario
+ */
+.projects-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 3.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/**
+ * Contenedor para la imagen del proyecto
+ * Con efecto de zoom en hover
+ */
+ .project-image-container {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 45%;
+  max-width: 45%;
+  border-radius: 16px 0 0 16px; /* Añadimos borde redondeado solo en el lado izquierdo */
+}
+
+/**
+ * Efecto hover para el contenedor de proyecto
+ * Eleva el contenedor y aumenta la sombra
+ */
+.project-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/**
+ * Elimina el margen inferior del último proyecto
+ */
+.project-container:last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Contenedor para la imagen del proyecto
+ */
+ .project-image-container {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 45%;
+  max-width: 45%;
+  border-radius: 16px 0 0 16px;
+  height: auto;
+  min-height: 300px;
+}
+
+/**
+ * Imagen dentro del contenedor
+ */
+ .project-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/**
+ * Efecto de zoom para la imagen en hover
+ */
+.project-container:hover .project-image-container img {
+  transform: scale(1.05);
+}
+
+/**
+ * Capa de superposición sobre la imagen
+ * Crea un gradiente oscuro que aparece en hover
+ */
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/**
+ * Hace visible la superposición en hover
+ */
+.project-container:hover .project-image-overlay {
+  opacity: 1;
+}
+
+/**
+ * Contenedor para la información del proyecto
+ */
+ .project-info {
+  padding: 2rem 2.5rem;
+  flex: 0 0 55%;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/**
+ * Título del proyecto
+ * Con línea decorativa inferior
+ */
+ .project-title {
+  font-size: 1.8rem;
+  color: #0056b3;
+  margin-bottom: 1.2rem; /* Aumentamos ligeramente el margen inferior */
+  position: relative;
+  padding-bottom: 0.75rem;
+  display: inline-block;
+}
+
+/**
+ * Línea decorativa bajo el título del proyecto
+ */
+.project-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #FFB400;
+  border-radius: 1.5px;
+}
+
+/**
+ * Descripción del proyecto
+ */
+ .project-description {
+  margin-bottom: 1.2rem; /* Ajustamos el margen para mejor espaciado */
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 0.95rem; /* Ajustamos el tamaño de fuente */
+}
+
+/**
+ * Lista de características del proyecto
+ */
+.project-features {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * Elemento individual de la lista de características
+ * Con icono de verificación personalizado
+ */
+.project-features li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+}
+
+/**
+ * Icono de verificación para cada característica
+ */
+.project-features li svg {
+  color: #FFB400;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+/**
+ * Botón de llamada a la acción del proyecto
+ * Con gradiente, sombra y efectos de hover
+ */
+.project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  background: linear-gradient(135deg, #0056b3 0%, #2196F3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/**
+ * Efecto hover para el botón CTA
+ * Invierte el gradiente y eleva el botón
+ */
+.project-cta:hover {
+  background: linear-gradient(135deg, #2196F3 0%, #0056b3 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+  color: #fff;
+}
+
+/**
+ * Efecto active para el botón CTA
+ * Reduce ligeramente la elevación al hacer clic
+ */
+.project-cta:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(33, 150, 243, 0.3);
+}
+
+/**
+ * Icono dentro del botón CTA
+ */
+.project-cta i {
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   SECCIÓN DE CONTACTO - ESTILOS ESPECÍFICOS
+   ========================================= */
+/* Sección de contacto */
+.contact-section {
+  padding: 5rem 0;
+  /* Reducimos el padding */
+  position: relative;
+  color: #fff;
+  background-color: transparent;
+  /* Mantenemos transparente para ver el mapa */
+  min-height: 600px;
+  /* Altura mínima para asegurar que el mapa se vea */
+}
+
+/* Contenedor del mapa */
+.contact-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Estilos para el iframe del mapa */
+.contact-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(30%) contrast(1.1);
+  /* Filtro más sutil */
+  z-index: -1;
+  /* Aseguramos que esté detrás del contenido */
+}
+
+/**
+ * Título de la sección de contacto
+ * Con línea decorativa inferior
+ */
+.contact-title {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Línea decorativa bajo el título
+ * Crea un subrayado de color degradado
+ */
+.contact-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/**
+ * Formulario de contacto
+ * Con fondo semitransparente y efecto de vidrio
+ */
+.contact-form {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 800px;
+  margin: 3rem auto 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Grupo de formulario para cada campo
+ * Mantiene organizado cada elemento de entrada
+ */
+.contact-form-group {
+  margin-bottom: 1.8rem;
+}
+
+/**
+ * Etiqueta para los campos del formulario
+ * Con estilo destacado y transición suave
+ */
+.contact-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+/**
+ * Campos de entrada del formulario
+ * Con fondo semitransparente y bordes sutiles
+ */
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/**
+ * Estado de focus para los campos de entrada
+ * Cambia el borde y añade un resplandor
+ */
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/**
+ * Estilo específico para el área de texto
+ * Permite múltiples líneas de entrada
+ */
+.contact-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/**
+ * Botón de envío del formulario
+ * Con gradiente, sombra y efectos de hover
+ */
+.contact-submit {
+  padding: 0.85rem 1.8rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #FFA000 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(255, 180, 0, 0.3);
+}
+
+/**
+ * Efecto hover para el botón de envío
+ * Invierte el gradiente y eleva el botón
+ */
+.contact-submit:hover {
+  background: linear-gradient(135deg, #FFA000 0%, var(--primary-color) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 180, 0, 0.4);
+}
+
+/**
+ * Efecto active para el botón de envío
+ * Reduce ligeramente la elevación al hacer clic
+ */
+.contact-submit:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(255, 180, 0, 0.3);
+}
+
+/**
+ * Icono dentro del botón de envío
+ */
+.contact-submit i {
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   ANIMACIONES 
+   ===========================================*/
+
+/* Animaciones para los proyectos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-container {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.project-container:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.project-container:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* =========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ========================================= */
+
+/* Dispositivos pequeños (teléfonos, menos de 768px) */
+@media (max-width: 767.98px) {
+
+  /* Ajustes para el masthead */
+  .masthead {
+    min-height: auto;
+    height: auto;
+    padding-bottom: 4rem;
+    /* Aumentamos el padding inferior en móviles */
+  }
+
+  .masthead h1 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+    padding: 0.3rem 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .masthead h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .masthead .container {
+    padding-bottom: 50px;
+  }
+
+  .masthead .calculator-button {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Ajustes para la sección de beneficios */
+  .benefits-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .benefit-card {
+    width: 100%;
+    min-width: auto;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-title {
+    font-size: 1.3rem;
+  }
+
+  .benefit-description {
+    font-size: 0.9rem;
+  }
+
+  .benefits-section {
+    padding: 1rem 0;
+  }
+
+  .masthead .text-center {
+    width: 100%;
+  }
+
+  .masthead .text-center {
+    width: 100%;
+  }
+
+  /* Ajustes para el botón de calculadora */
+  .calculator-button-container {
+    margin-top: 1rem;
+  }
+
+  .calculator-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  /* Resto de ajustes para móviles */
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-image-container {
+    height: 200px;
+    margin: 2rem auto;
+  }
+
+  .about-stat-number {
+    font-size: 2rem;
+  }
+
+  .about-stat-label {
+    font-size: 0.9rem;
+  }
+
+  .project-container {
+    flex-direction: column;
+  }
+
+  .project-image-container {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 250px;
+    border-radius: 16px 16px 0 0;
+    min-height: auto;
+  }
+  
+  .project-info {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+  }
+
+  .calculator-container {
+    padding: 1.5rem;
+  }
+
+  .calculator-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Dispositivos medianos (tablets, 768px a 991.98px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .masthead h1 {
+    font-size: 3.5rem;
+  }
+
+  .masthead h2 {
+    font-size: 1.5rem;
+  }
+
+  .benefit-card {
+    min-width: 220px;
+    padding: 1.5rem;
+  }
+
+  .benefit-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .about-stat-number {
+    font-size: 2.2rem;
+  }
+}
+
+/* Dispositivos grandes (desktops, 992px y superiores) */
+@media (min-width: 992px) {
+  .benefits-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Ajustes específicos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .masthead h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .masthead h2 {
+    font-size: 1rem;
+  }
+
+  .benefit-card {
+    padding: 1.2rem;
+  }
+
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .benefit-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+}

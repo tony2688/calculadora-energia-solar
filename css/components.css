@@ -1,0 +1,872 @@
+/* =========================================
+   COMPONENTES REUTILIZABLES
+   ========================================= */
+
+/* =========================================
+   NAVEGACIÓN MEJORADA
+   ========================================= */
+/**
+ * Barra de navegación fija
+ * Permanece en la parte superior de la página mientras se desplaza
+ * Con fondo semitransparente y sombra sutil
+ */
+ .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Asegura que esté por encima del contenido */
+  padding: 0.75rem 0;
+  transition: all 0.3s ease;
+  background-color: rgba(66, 47, 25, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Estado de la barra de navegación al hacer scroll
+ * Cambia ligeramente su apariencia para destacar más
+ */
+ .navbar.navbar-shrink {
+  background-color: rgba(66, 47, 25, 0.95);
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * Contenedor interno de la barra de navegación
+ * Mantiene el contenido centrado y con ancho máximo
+ */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+/**
+ * Estado de la barra de navegación al hacer scroll
+ * Cambia ligeramente su apariencia para destacar más
+ */
+.navbar.navbar-scrolled {
+  background-color: rgba(66, 47, 25, 0.95);
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * Logo o nombre de la marca
+ * Elemento principal de identidad en la navegación
+ */
+.navbar-brand {
+  display: flex;
+  margin-right: auto;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/**
+ * Efecto hover para el nombre de la marca
+ */
+.navbar-brand:hover {
+  color: var(--primary-color, #FFB400);
+}
+
+/**
+ * Imagen del logo en la barra de navegación
+ */
+.nav-logo {
+  height: 40px;
+  margin-right: 10px;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.3));
+}
+
+/**
+ * Contenedor de los enlaces de navegación
+ * Organiza los elementos de menú horizontalmente
+ */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  margin-left: auto;
+}
+
+/**
+ * Elemento individual del menú de navegación
+ */
+.nav-item {
+  margin: 0 0.75rem;
+}
+
+/**
+ * Enlace dentro del menú de navegación
+ * Con efecto de subrayado animado al hacer hover
+ */
+.nav-link {
+  display: block;
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/**
+ * Línea decorativa que aparece bajo el enlace al hacer hover
+ * Inicialmente invisible (ancho 0)
+ */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color, #FFB400);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/**
+ * Cambio de color del enlace al hacer hover o focus
+ */
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--primary-color, #FFB400);
+}
+
+/**
+ * Animación de la línea decorativa al hacer hover o focus
+ * Aumenta su ancho para crear efecto de subrayado
+ */
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 70%;
+}
+
+/**
+ * Utilidad para ocultar elementos colapsables
+ * Usado para el menú móvil cuando está cerrado
+ */
+.collapse:not(.show) {
+  display: none;
+}
+
+/**
+ * Botón para mostrar/ocultar el menú en dispositivos móviles
+ * Inicialmente oculto, aparece en pantallas pequeñas
+ */
+.navbar-toggler {
+  display: none;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/**
+ * Efecto hover para el botón del menú móvil
+ */
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/**
+ * Efecto focus para el botón del menú móvil
+ * Mejora la accesibilidad al navegar con teclado
+ */
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(255, 180, 0, 0.25);
+}
+
+/**
+ * Ajustes responsivos para la navegación en pantallas medianas y pequeñas
+ */
+@media (max-width: 991px) {
+  /* Permite que los elementos se envuelvan en múltiples líneas */
+  .navbar-container {
+    flex-wrap: wrap;
+  }
+
+  /* Muestra el botón del menú móvil */
+  .navbar-toggler {
+    display: block;
+  }
+
+  /* Estilo para el menú desplegable en móviles */
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-basis: 100%;
+    margin-top: 1rem;
+    background-color: rgba(66, 47, 25, 0.95);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Estado del menú cuando está abierto */
+  .navbar-collapse.show {
+    max-height: 300px;
+  }
+
+  /* Cambia la dirección de los enlaces a vertical */
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  /* Ajusta los márgenes de los elementos del menú */
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  /* Ajusta el padding de los enlaces */
+  .nav-link {
+    padding: 0.5rem 0;
+  }
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+/**
+ * Estilo base para todos los botones
+ * Define la apariencia general y comportamiento
+ */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/**
+ * Estilo para el estado de focus de los botones
+ * Mejora la accesibilidad al navegar con teclado
+ */
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 180, 0, 0.25);
+}
+
+/**
+ * Botón principal con color primario
+ * Usado para acciones principales o destacadas
+ */
+.btn-primary {
+  background-color: var(--primary-color, #FFB400);
+  color: #fff;
+  border-color: var(--primary-color, #FFB400);
+}
+
+/**
+ * Efecto hover para el botón principal
+ * Oscurece ligeramente el color y añade elevación
+ */
+.btn-primary:hover {
+  background-color: #e6a200;
+  border-color: #e6a200;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 180, 0, 0.3);
+}
+
+/**
+ * Botón secundario con color secundario
+ * Usado para acciones secundarias o alternativas
+ */
+.btn-secondary {
+  background-color: var(--secondary-color, #2196F3);
+  color: #fff;
+  border-color: var(--secondary-color, #2196F3);
+}
+
+/**
+ * Efecto hover para el botón secundario
+ * Oscurece ligeramente el color y añade elevación
+ */
+.btn-secondary:hover {
+  background-color: #0c7cd5;
+  border-color: #0c7cd5;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+}
+
+/**
+ * Botón con borde y fondo transparente
+ * Útil para acciones menos destacadas o sobre fondos oscuros
+ */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+/**
+ * Efecto hover para el botón outline
+ * Invierte los colores y añade elevación
+ */
+.btn-outline:hover {
+  background-color: #fff;
+  color: var(--secondary-color, #2196F3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+/**
+ * Variante grande del botón
+ * Para acciones muy destacadas o principales
+ */
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+/**
+ * Variante pequeña del botón
+ * Para acciones secundarias o en espacios reducidos
+ */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+/**
+ * Contenedor tipo tarjeta para información
+ * Con efecto de elevación y bordes redondeados
+ */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/**
+ * Efecto hover para las tarjetas
+ * Eleva ligeramente la tarjeta y aumenta la sombra
+ */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/**
+ * Imagen dentro de la tarjeta
+ * Ocupa todo el ancho y mantiene su proporción
+ */
+.card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/**
+ * Contenedor para el contenido textual de la tarjeta
+ */
+.card-body {
+  padding: 1.5rem;
+}
+
+/**
+ * Título de la tarjeta
+ */
+.card-title {
+  font-size: 1.5rem;
+  color: var(--secondary-color, #2196F3);
+  margin-bottom: 0.75rem;
+}
+
+/**
+ * Texto principal de la tarjeta
+ */
+.card-text {
+  color: var(--text-muted, #6c757d);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/**
+ * Pie de la tarjeta
+ * Para información adicional o acciones secundarias
+ */
+.card-footer {
+  padding: 1rem 1.5rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   FORMULARIOS
+   ========================================= */
+/**
+ * Contenedor para cada campo del formulario
+ */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * Etiqueta para los campos del formulario
+ */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary-color, #2196F3);
+}
+
+/**
+ * Estilo base para los campos de entrada
+ * Inputs, textareas y selects
+ */
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-dark, #212529);
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/**
+ * Estado de focus para los campos de entrada
+ */
+.form-control:focus {
+  border-color: var(--primary-color, #FFB400);
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 180, 0, 0.25);
+}
+
+/**
+ * Estilo para el placeholder de los campos
+ */
+.form-control::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/**
+ * Estilo específico para los selects
+ * Añade una flecha personalizada
+ */
+ select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px 12px;
+  padding-right: 2.5rem;
+}
+
+/**
+ * Estilos para inputs de tipo número
+ * Elimina las flechas incrementales nativas
+ */
+input[type="number"].form-control {
+  -moz-appearance: textfield;
+}
+
+/**
+ * Elimina las flechas incrementales en navegadores WebKit
+ */
+input[type="number"].form-control::-webkit-outer-spin-button,
+input[type="number"].form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* =========================================
+   TABLAS
+   ========================================= */
+/**
+ * Tabla para mostrar electrodomésticos
+ * Con estilos para mejorar la legibilidad
+ */
+.appliance-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+/**
+ * Celdas y encabezados de la tabla
+ */
+.appliance-table th,
+.appliance-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/**
+ * Estilo para los encabezados de la tabla
+ */
+.appliance-table th {
+  font-weight: 600;
+  color: var(--secondary-color, #2196F3);
+  background-color: rgba(33, 150, 243, 0.05);
+}
+
+/**
+ * Efecto hover para las filas de la tabla
+ */
+.appliance-table tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/**
+ * Botones de acción dentro de la tabla
+ */
+.appliance-action {
+  cursor: pointer;
+  color: #dc3545;
+  transition: color 0.3s ease;
+}
+
+/**
+ * Efecto hover para los botones de acción
+ */
+.appliance-action:hover {
+  color: #bd2130;
+}
+
+/**
+ * Botón para agregar nuevos electrodomésticos
+ */
+.add-appliance-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--secondary-color, #2196F3);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+/**
+ * Efecto hover para el botón de agregar
+ */
+.add-appliance-btn:hover {
+  background-color: #0c7cd5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+}
+
+/**
+ * Icono dentro del botón de agregar
+ */
+.add-appliance-btn i {
+  margin-right: 0.5rem;
+}
+
+/* =========================================
+   SECCIÓN DE CONTACTO - COMPONENTES REUTILIZABLES
+   ========================================= */
+/**
+ * Mapa de fondo para la sección de contacto
+ */
+ .contact-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/**
+ * Capa de color sobre el mapa para mejorar la legibilidad
+ */
+ .contact-map::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Aumentamos la opacidad para mejor contraste */
+}
+
+/**
+ * Contenedor para el contenido sobre el mapa
+ */
+.contact-container {
+  position: relative;
+  z-index: 1;
+}
+
+/**
+ * Título de sección genérico
+ */
+.section-title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/**
+ * Divisor decorativo bajo el título
+ */
+.section-divider {
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color, #FFB400);
+  margin: 0 auto 3rem;
+}
+
+/**
+ * Contenedor para las cajas de información de contacto
+ */
+ .contact-boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem; /* Añadimos margen inferior */
+}
+
+/**
+ * Caja individual de información de contacto
+ */
+ .contact-box {
+  background: linear-gradient(135deg, #0056b3 0%, #2196F3 100%);
+  border-radius: 10px;
+  padding: 1.5rem; /* Reducimos el padding */
+  text-align: center;
+  min-width: 250px; /* Reducimos el ancho mínimo */
+  max-width: 280px; /* Añadimos un ancho máximo */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Añadimos sombra para destacar */
+}
+
+/**
+ * Efecto hover para las cajas de contacto
+ */
+.contact-box:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/**
+ * Icono circular para cada tipo de contacto
+ */
+.contact-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color, #FFB400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+/**
+ * Estilo para el icono dentro del círculo
+ */
+.contact-icon i {
+  font-size: 30px;
+  color: #fff;
+}
+
+/**
+ * Título de cada método de contacto
+ */
+.contact-title {
+  font-size: 1.2rem;
+  color: var(--primary-color, #FFB400);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/**
+ * Texto de información de contacto
+ */
+.contact-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+/**
+ * Enlaces dentro de la información de contacto
+ */
+.contact-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/**
+ * Efecto hover para los enlaces de contacto
+ */
+.contact-link:hover {
+  color: var(--primary-color, #FFB400);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+/**
+ * Pie de página principal
+ * Con gradiente decorativo en la parte superior
+ */
+.footer {
+  background-color: #191c1f;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+}
+
+/**
+ * Línea decorativa con gradiente en la parte superior del footer
+ */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color, #FFB400) 0%, var(--secondary-color, #2196F3) 100%);
+}
+
+/**
+ * Contenedor para alinear copyright e iconos sociales
+ */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/**
+ * Texto de copyright
+ */
+.footer-copyright {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/**
+ * Contenedor para los iconos sociales
+ */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+/**
+ * Iconos sociales individuales
+ */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/**
+ * Efecto hover para los iconos sociales
+ */
+.social-icon:hover {
+  background-color: var(--primary-color, #FFB400);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/**
+ * Ajustes responsivos para pantallas pequeñas
+ */
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/**
+ * Ajuste del margen para el copyright en móviles
+ */
+.footer-copyright {
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * Ajustes adicionales para pantallas medianas
+ */
+@media (max-width: 768px) {
+  .footer {
+    padding: 0.75rem 0;
+  }
+
+  .footer-social {
+    gap: 0.75rem;
+  }
+
+  .social-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+}

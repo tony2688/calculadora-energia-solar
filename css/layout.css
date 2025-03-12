@@ -1,0 +1,505 @@
+/* =========================================
+   LAYOUT Y ESTRUCTURA
+   ========================================= */
+
+/* 
+ * Container
+ * Contenedor principal que mantiene el contenido centrado y con márgenes
+ * Se adapta a diferentes tamaños de pantalla mediante media queries
+ */
+ .container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Contenedor para pantallas extra pequeñas (móviles) */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+/* Contenedor para pantallas pequeñas (tablets) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+/* Contenedor para pantallas medianas (desktops) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Contenedor para pantallas grandes (desktops grandes) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* 
+ * Grid system
+ * Sistema de rejilla basado en flexbox para crear layouts responsivos
+ * Divide el ancho en 12 columnas
+ */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* 
+ * Columnas
+ * Clases para definir el ancho de los elementos dentro del grid
+ * Todas las columnas tienen padding horizontal y ancho 100% por defecto
+ */
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Columna que ocupa todo el ancho (12/12) */
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Columna que ocupa la mitad del ancho (6/12) */
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* 
+ * Columnas responsivas para tablets (md)
+ * Se aplican a partir de 768px de ancho
+ */
+@media (min-width: 768px) {
+  /* Ocupa la mitad del ancho en tablets */
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Ocupa un tercio del ancho en tablets */
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  /* Ocupa dos tercios del ancho en tablets */
+  .col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+
+/* 
+ * Columnas responsivas para desktops (lg)
+ * Se aplican a partir de 992px de ancho
+ */
+@media (min-width: 992px) {
+  /* Ocupa la mitad del ancho en desktops */
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Ocupa un tercio del ancho en desktops */
+  .col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  /* Ocupa dos tercios del ancho en desktops */
+  .col-lg-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+}
+
+/* 
+ * Utilidades de flexbox
+ * Clases para controlar la disposición de elementos con flexbox
+ */
+/* Activa flexbox en un contenedor */
+.d-flex {
+  display: flex;
+}
+
+/* Cambia la dirección del flex a vertical */
+.flex-column {
+  flex-direction: column;
+}
+
+/* Centra los elementos horizontalmente */
+.justify-content-center {
+  justify-content: center;
+}
+
+/* Distribuye los elementos con espacio entre ellos */
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* Centra los elementos verticalmente */
+.align-items-center {
+  align-items: center;
+}
+
+/* 
+ * Utilidades de texto
+ * Clases para controlar la alineación del texto
+ */
+/* Centra el texto horizontalmente */
+.text-center {
+  text-align: center;
+}
+
+/* Alinea el texto a la derecha en tablets y superiores */
+@media (min-width: 768px) {
+  .text-md-end {
+    text-align: right;
+  }
+}
+
+/* 
+ * Utilidades de margen
+ * Clases para controlar los márgenes de los elementos
+ */
+/* Sin margen inferior */
+.mb-0 {
+  margin-bottom: 0;
+}
+
+/* Margen inferior mediano (1.5rem) */
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+/* Margen inferior grande (3rem) */
+.mb-5 {
+  margin-bottom: 3rem;
+}
+
+/* Margen superior mediano (1.5rem) */
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+/* Margen superior grande (3rem) */
+.mt-5 {
+  margin-top: 3rem;
+}
+
+/* 
+ * Utilidades de padding
+ * Clases para controlar el relleno de los elementos
+ */
+/* Padding horizontal mediano (1.5rem) */
+.px-4 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Padding vertical mediano (1.5rem) */
+.py-4 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Padding horizontal grande en desktops */
+@media (min-width: 992px) {
+  .px-lg-5 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* 
+ * Utilidades de dimensiones
+ * Clases para controlar el alto y ancho de los elementos
+ */
+/* Altura del 100% */
+.h-100 {
+  height: 100%;
+}
+
+/* Ancho del 100% */
+.w-100 {
+  width: 100%;
+}
+
+/* Imágenes responsivas que mantienen su proporción */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+ * Utilidades de visibilidad
+ * Clases para controlar la visibilidad de los elementos
+ */
+/* Oculta elementos colapsables */
+.collapse:not(.show) {
+  display: none;
+}
+
+/* 
+ * Utilidades de margen automático
+ * Clases para alinear elementos con margen automático
+ */
+/* Margen izquierdo automático (empuja el elemento a la derecha) */
+.ms-auto {
+  margin-left: auto;
+}
+
+/* Margen izquierdo pequeño (0.25rem) */
+.ms-1 {
+  margin-left: 0.25rem;
+}
+
+/* =========================================
+   SECCIONES ESPECÍFICAS
+   ========================================= */
+
+/* 
+ * Beneficios en la sección masthead
+ * Estilos para la sección de beneficios en la cabecera
+ */
+.benefits-section {
+  margin-top: 2rem;
+}
+
+/* Contenedor flexible para las tarjetas de beneficios */
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Tarjeta individual de beneficio con efecto de vidrio esmerilado */
+.benefit-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover para las tarjetas de beneficios */
+.benefit-card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Icono circular para cada beneficio */
+.benefit-icon {
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-color, #FFB400);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+/* Estilo para el icono dentro del círculo */
+.benefit-icon i {
+  font-size: 40px;
+  color: #fff;
+}
+
+/* Título de cada beneficio */
+.benefit-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Descripción de cada beneficio */
+.benefit-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+}
+
+/* 
+ * Sección About
+ * Estilos para la sección "Acerca de"
+ */
+.about-section {
+  padding: 5rem 0;
+  background-color: #fff;
+}
+
+/* Título principal de la sección About */
+.about-title {
+  font-size: 2.5rem;
+  color: var(--secondary-color, #2196F3);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Subtítulo de la sección About */
+.about-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted, #6c757d);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 
+ * Sección Contacto
+ * Estilos para la sección de contacto con mapa
+ */
+.contact-section {
+  position: relative;
+  padding: 5rem 0;
+  background-color: var(--dark-bg, #212529);
+  color: #fff;
+}
+
+/* Mapa de fondo para la sección de contacto */
+.contact-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Contenedor para el contenido sobre el mapa */
+.contact-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Título de la sección de contacto */
+.contact-title {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Contenedor para los elementos de información de contacto */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Tarjeta individual de información de contacto */
+.contact-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+/* Título de cada elemento de contacto */
+.contact-item-title {
+  font-size: 1.2rem;
+  color: var(--primary-color, #FFB400);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* Texto de cada elemento de contacto */
+.contact-item-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 
+ * Footer
+ * Estilos para el pie de página
+ */
+.footer {
+  background-color: #191c1f;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Contenedor para los enlaces del footer */
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+/* Enlaces individuales en el footer */
+.footer-link {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Efecto hover para los enlaces del footer */
+.footer-link:hover {
+  color: var(--primary-color, #FFB400);
+}
+
+/* Texto de copyright en el footer */
+.footer-copyright {
+  font-size: 0.875rem;
+}

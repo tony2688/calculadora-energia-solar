@@ -1,0 +1,154 @@
+/* =========================================
+   IMPORTACIÓN DE ARCHIVOS CSS MODULARES
+   ========================================= */
+/* Importa variables y estilos base */
+@import 'base.css';
+/* Importa estructura y layout */
+@import 'layout.css';
+/* Importa componentes reutilizables */
+@import 'components.css';
+/* Importa estilos específicos de páginas */
+@import 'pages.css';
+
+/* =========================================
+   MEDIA QUERIES GLOBALES
+   ========================================= */
+
+/**
+ * Pantallas grandes (desktops, menos de 1200px)
+ * Ajustes para elementos específicos en pantallas grandes
+ */
+@media (max-width: 1199.98px) {
+  /* Ajusta el ancho máximo del contenedor */
+  .container {
+    max-width: 960px;
+  }
+  
+  /* Reduce el tamaño del elemento decorativo detrás del título principal */
+  .masthead h1::before {
+    width: 500px;
+    height: 500px;
+  }
+  
+  /* Ajusta el ancho máximo de las tarjetas de beneficios */
+  .benefit-card {
+    max-width: 280px;
+  }
+}
+
+/**
+ * Pantallas medianas (tablets, menos de 992px)
+ * Ajustes para elementos específicos en tablets
+ */
+@media (max-width: 991.98px) {
+  /* Ajusta el ancho máximo del contenedor */
+  .container {
+    max-width: 720px;
+  }
+
+  /* Reduce el tamaño de la fuente del título principal */
+  .masthead h1 {
+    font-size: 3rem;
+  }
+  
+  /* Reduce el tamaño del elemento decorativo detrás del título principal */
+  .masthead h1::before {
+    width: 400px;
+    height: 400px;
+  }
+  
+  /* Ajusta el ancho y margen de las tarjetas de beneficios */
+  .benefit-card {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Permite que los botones de la calculadora se envuelvan en múltiples líneas */
+  .calculator-button-container {
+    flex-wrap: wrap;
+  }
+  
+  /* Elimina el margen inferior del contenedor de imágenes de proyectos */
+  .project-image-container {
+    margin-bottom: 0; /* Optimizado para el nuevo diseño de proyectos */
+  }
+}
+
+/**
+ * Pantallas pequeñas (móviles en landscape, menos de 768px)
+ * Ajustes para elementos específicos en móviles horizontales
+ */
+@media (max-width: 767.98px) {
+  /* Reduce aún más el tamaño de la fuente del título principal */
+  .masthead h1 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Ajusta el ancho mínimo y margen de las tarjetas de beneficios */
+  .benefit-card {
+    min-width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Cambia la dirección de los botones de la calculadora a vertical */
+  .calculator-button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/**
+ * Pantallas muy pequeñas (móviles, menos de 768px)
+ * Ajustes adicionales para elementos específicos en móviles
+ */
+@media (max-width: 767.98px) {
+  /* Ajusta el ancho máximo del contenedor */
+  .container {
+    max-width: 540px;
+  }
+  
+  /* Ajusta el tamaño de la fuente del título principal */
+  .masthead h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+  }
+  
+  /* Reduce el tamaño de la fuente del subtítulo principal */
+  .masthead h2 {
+    font-size: 1.4rem;
+  }
+  
+  /* Reduce el tamaño de la fuente del título de la sección About */
+  .about-title {
+    font-size: 2.2rem;
+  }
+  
+  /* Reduce el tamaño de la fuente del título de la calculadora */
+  .calculator-title {
+    font-size: 2rem;
+  }
+  
+  /* Cambia la dirección de los grupos de botones a vertical */
+  .button-group {
+    flex-direction: column;
+  }
+  
+  /* Reduce el tamaño de los iconos de beneficios */
+  .benefit-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  /* Reduce el tamaño de la fuente de los iconos de beneficios */
+  .benefit-icon i {
+    font-size: 30px;
+  }
+  
+  /* Centra los enlaces sociales y añade margen superior */
+  .social-links {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
